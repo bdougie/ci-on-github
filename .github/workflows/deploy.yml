@@ -32,9 +32,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: npm run generate
+      - name: npm run build
         run: |
-          npm run generate
+          npm run build
       - name: Push to pages
         uses: crazy-max/ghaction-github-pages@v1.2.4
         with:
