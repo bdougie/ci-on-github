@@ -1,11 +1,7 @@
 name: 'Deploy'
 on:
-  workflow_dispatch: 
-  push:
-    branches:
-      - develop
-  schedule:
-    - cron: '*/15 * * * *'
+  workflow_dispatch:
+  pull_request:
 
 env:
   NODE_VERSION: '10.x'
