@@ -1,11 +1,7 @@
 name: 'Deploy'
 on:
-  workflow_dispatch: 
-  push:
-    branches:
-      - develop
-  schedule:
-    - cron: '*/15 * * * *'
+  workflow_dispatch:
+  pull_request:
 
 env:
   NODE_VERSION: '10.x'
@@ -38,6 +34,6 @@ jobs:
       - name: Push to pages
         uses: crazy-max/ghaction-github-pages@v1.2.4
         with:
-          build_dir: dist
+          build_dir: build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
